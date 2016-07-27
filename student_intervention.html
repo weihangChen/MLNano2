@@ -226,7 +226,7 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[2]:</div>
+<div class="prompt input_prompt">In&nbsp;[1]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span></span><span class="c1"># Import libraries</span>
@@ -278,7 +278,7 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[3]:</div>
+<div class="prompt input_prompt">In&nbsp;[2]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span></span><span class="c1"># TODO: Calculate number of students</span>
@@ -342,7 +342,7 @@ Graduation rate of the class: 67.09%
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[4]:</div>
+<div class="prompt input_prompt">In&nbsp;[3]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span></span><span class="c1"># Extract feature columns</span>
@@ -424,7 +424,7 @@ Feature values:
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[5]:</div>
+<div class="prompt input_prompt">In&nbsp;[4]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span></span><span class="k">def</span> <span class="nf">preprocess_features</span><span class="p">(</span><span class="n">X</span><span class="p">):</span>
@@ -495,7 +495,7 @@ Feature values:
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[6]:</div>
+<div class="prompt input_prompt">In&nbsp;[5]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span></span><span class="c1"># TODO: Import any additional functionality you may need here</span>
@@ -586,13 +586,13 @@ Testing set has 99 samples.
 <p><a href="https://azure.microsoft.com/en-us/documentation/articles/machine-learning-algorithm-cheat-sheet/">https://azure.microsoft.com/en-us/documentation/articles/machine-learning-algorithm-cheat-sheet/</a></p>
 <p>I have picked decision tree, svm and gaussian naive bayes as solutions here, as they belong to the classfication algoritms.</p>
 <p>SVM 
-using linear kernel is same as logistic regression, the strength for svm is that it can describe datapoints using non-linear functions. the drawback is that it can be slow when data amount is large.</p>
+SVM is applied in fields like image processing and classification. using linear kernel is same as logistic regression, the strength for svm is that it can describe datapoints using non-linear functions. the drawback is that it can be slow when data amount is large. it is applied</p>
 <p>Naive bayes
 <a href="https://www.youtube.com/watch?v=IlVINQDk4o8">https://www.youtube.com/watch?v=IlVINQDk4o8</a>
-the simplicity doing the counting and probability calculation can be its strength, but the this algorithm assumes that the observed features are independent, which can be a weakness.</p>
+naive bayes is applied in fields like text classification. The simplicity doing the counting and probability calculation can be its strength, but the this algorithm assumes that the observed features are independent, which can be a weakness.</p>
 <p>decision tree
 <a href="https://www.youtube.com/watch?v=xohJ1Vu-3xY">https://www.youtube.com/watch?v=xohJ1Vu-3xY</a>
-I don't see too much difference between decision tree and naive bayes, decision tree also calculates probability named entrophy to set the attribute for splitting. it should has the same drawback as naive bayes</p>
+decision tree is applied in fields like manufacturing and production. It's easy to interpret a model produced by Decision Trees, and people can understand their premise of predicting with splits, but it can get very complex and overfit on small/medium size datasets. I don't see too much difference between decision tree and naive bayes, decision tree also calculates probability named entrophy to set the attribute for splitting.</p>
 <p>I would say that the observed features from this task is independent, therefore decision tree and naive bayes are good fit.</p>
 
 </div>
@@ -618,7 +618,7 @@ I don't see too much difference between decision tree and naive bayes, decision 
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[7]:</div>
+<div class="prompt input_prompt">In&nbsp;[6]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span></span><span class="k">def</span> <span class="nf">train_classifier</span><span class="p">(</span><span class="n">clf</span><span class="p">,</span> <span class="n">X_train</span><span class="p">,</span> <span class="n">y_train</span><span class="p">):</span>
@@ -705,8 +705,8 @@ I don't see too much difference between decision tree and naive bayes, decision 
 <span class="k">def</span> <span class="nf">printline</span><span class="p">():</span>
     <span class="k">print</span> <span class="s1">&#39;-------------------------&#39;</span>
 <span class="c1"># TODO: Initialize the three models</span>
-<span class="n">clf_A</span> <span class="o">=</span> <span class="n">DecisionTreeClassifier</span><span class="p">()</span>
-<span class="n">clf_B</span> <span class="o">=</span> <span class="n">SVC</span><span class="p">()</span>
+<span class="n">clf_A</span> <span class="o">=</span> <span class="n">DecisionTreeClassifier</span><span class="p">(</span><span class="n">random_state</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+<span class="n">clf_B</span> <span class="o">=</span> <span class="n">SVC</span><span class="p">(</span><span class="n">random_state</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
 <span class="n">clf_C</span> <span class="o">=</span> <span class="n">GaussianNB</span><span class="p">()</span>
 
 <span class="c1"># TODO: Set up the training set sizes</span>
@@ -762,42 +762,42 @@ I don't see too much difference between decision tree and naive bayes, decision 
 <div class="output_area"><div class="prompt"></div>
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>Training a DecisionTreeClassifier using a training set size of 100. . .
-Trained model in 0.0020 seconds
-Made predictions in 0.0020 seconds.
+Trained model in 0.0010 seconds
+Made predictions in 0.0000 seconds.
 F1 score for training set: 1.0000.
-Made predictions in 0.0010 seconds.
-F1 score for test set: 0.7143.
+Made predictions in 0.0000 seconds.
+F1 score for test set: 0.7000.
 -------------------------
 Training a DecisionTreeClassifier using a training set size of 200. . .
-Trained model in 0.0030 seconds
+Trained model in 0.0010 seconds
 Made predictions in 0.0000 seconds.
 F1 score for training set: 1.0000.
 Made predictions in 0.0000 seconds.
-F1 score for test set: 0.7015.
+F1 score for test set: 0.6917.
 -------------------------
 Training a DecisionTreeClassifier using a training set size of 296. . .
-Trained model in 0.0040 seconds
+Trained model in 0.0020 seconds
 Made predictions in 0.0000 seconds.
 F1 score for training set: 1.0000.
-Made predictions in 0.0010 seconds.
-F1 score for test set: 0.7559.
+Made predictions in 0.0000 seconds.
+F1 score for test set: 0.7500.
 -------------------------
 Training a SVC using a training set size of 100. . .
-Trained model in 0.0030 seconds
-Made predictions in 0.0020 seconds.
+Trained model in 0.0010 seconds
+Made predictions in 0.0010 seconds.
 F1 score for training set: 0.8750.
 Made predictions in 0.0010 seconds.
 F1 score for test set: 0.7662.
 -------------------------
 Training a SVC using a training set size of 200. . .
-Trained model in 0.0070 seconds
-Made predictions in 0.0030 seconds.
+Trained model in 0.0030 seconds
+Made predictions in 0.0020 seconds.
 F1 score for training set: 0.8771.
 Made predictions in 0.0010 seconds.
 F1 score for test set: 0.7632.
 -------------------------
 Training a SVC using a training set size of 296. . .
-Trained model in 0.0060 seconds
+Trained model in 0.0050 seconds
 Made predictions in 0.0040 seconds.
 F1 score for training set: 0.8712.
 Made predictions in 0.0020 seconds.
@@ -807,14 +807,14 @@ Training a GaussianNB using a training set size of 100. . .
 Trained model in 0.0010 seconds
 Made predictions in 0.0000 seconds.
 F1 score for training set: 0.8217.
-Made predictions in 0.0000 seconds.
+Made predictions in 0.0010 seconds.
 F1 score for test set: 0.7299.
 -------------------------
 Training a GaussianNB using a training set size of 200. . .
 Trained model in 0.0010 seconds
 Made predictions in 0.0000 seconds.
 F1 score for training set: 0.8315.
-Made predictions in 0.0000 seconds.
+Made predictions in 0.0010 seconds.
 F1 score for test set: 0.7111.
 -------------------------
 Training a GaussianNB using a training set size of 296. . .
@@ -862,21 +862,21 @@ F1 score for test set: 0.7465.
 <td style="text-align:center">0.0010</td>
 <td style="text-align:center">0.0000</td>
 <td style="text-align:center">1.0000</td>
-<td style="text-align:center">0.7213</td>
+<td style="text-align:center">0.7000</td>
 </tr>
 <tr>
 <td style="text-align:center">200</td>
 <td style="text-align:center">0.0010</td>
 <td style="text-align:center">0.0000</td>
 <td style="text-align:center">1.0000</td>
-<td style="text-align:center">0.7213</td>
+<td style="text-align:center">0.6917</td>
 </tr>
 <tr>
 <td style="text-align:center">300</td>
 <td style="text-align:center">0.0020</td>
 <td style="text-align:center">0.0000</td>
 <td style="text-align:center">1.0000</td>
-<td style="text-align:center">0.7244</td>
+<td style="text-align:center">0.7500</td>
 </tr>
 </tbody>
 </table>
@@ -900,15 +900,15 @@ F1 score for test set: 0.7465.
 </tr>
 <tr>
 <td style="text-align:center">200</td>
+<td style="text-align:center">0.0030</td>
 <td style="text-align:center">0.0020</td>
-<td style="text-align:center">0.0010</td>
 <td style="text-align:center">0.8771</td>
 <td style="text-align:center">0.7632</td>
 </tr>
 <tr>
 <td style="text-align:center">300</td>
 <td style="text-align:center">0.0050</td>
-<td style="text-align:center">0.0010</td>
+<td style="text-align:center">0.0040</td>
 <td style="text-align:center">0.8712</td>
 <td style="text-align:center">0.7632</td>
 </tr>
@@ -1001,8 +1001,12 @@ In terms of scoring for the algorithm performance, the higher the F1 score is (m
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p><strong>Answer: </strong></p>
-<p>we have trained a model using the observed features to predict if a student will fail or graduate. the chosen method is called support vector machine, similar to kmeans clustering. In a most simple senario, as we map "internet" to x-axis and "Dalc" to y-axis; then we plot all the student data points on a digram, display pass as green and fail as red.</p>
-<p>what happens is that we will draw a line spererating the datapoints into two groups, group1 (internet access + low amount of alcohol consumption at workday) containing mostly green datapoints and group2 (no internet access + high amount of alcohol consumption at workday) containing mostly red datapoints. the next time when we got a student profile who drinks alcohol at degree 3 and has no internet access. then we guess that he will fail, and requires intervention.</p>
+<p>we have trained a model using the observed features to predict if a student will fail or graduate. the chosen method is called support vector machine, similar to kmeans clustering.</p>
+<p>two dimensions: map past students data on a diagram, draw a linear/curvy line/hyperplane (visualization for math function) that separates the student into two groups (fail / pass). The metrics locating the line/hyperplane is to maximize the margin between datapoint groups</p>
+<p><img src="optimal-hyperplane.png"></p>
+<p>higher dimensions: when the decision boundary in lower dimensions is not linear (as shown in the image below), svm uses a method called kernal trick, increasing the dimensions so the original non-linear function become linear.
+<img src="1gvce.png"></p>
+<p>when a new student data as test data will be predicted by our trained model, the decision boundary function will category this new student into either the "fail" or "pass" group</p>
 
 </div>
 </div>
@@ -1033,17 +1037,17 @@ In terms of scoring for the algorithm performance, the higher the F1 score is (m
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[22]:</div>
+<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span></span><span class="c1"># TODO: Import &#39;GridSearchCV&#39; and &#39;make_scorer&#39;</span>
 <span class="kn">from</span> <span class="nn">sklearn.metrics</span> <span class="kn">import</span> <span class="n">make_scorer</span>
 <span class="kn">from</span> <span class="nn">sklearn</span> <span class="kn">import</span> <span class="n">grid_search</span>
 <span class="c1"># TODO: Create the parameters list you wish to tune</span>
-<span class="n">parameters</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;C&#39;</span><span class="p">:[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">10</span><span class="p">]}</span>
+<span class="n">parameters</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;kernel&#39;</span><span class="p">:(</span><span class="s1">&#39;linear&#39;</span><span class="p">,</span> <span class="s1">&#39;rbf&#39;</span><span class="p">),</span><span class="s1">&#39;C&#39;</span><span class="p">:[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">10</span><span class="p">],</span><span class="s1">&#39;gamma&#39;</span><span class="p">:</span><span class="n">np</span><span class="o">.</span><span class="n">logspace</span><span class="p">(</span><span class="o">-</span><span class="mi">9</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">13</span><span class="p">)}</span>
 
 <span class="c1"># TODO: Initialize the classifier</span>
-<span class="n">clf</span> <span class="o">=</span> <span class="n">SVC</span><span class="p">()</span>
+<span class="n">clf</span> <span class="o">=</span> <span class="n">SVC</span><span class="p">(</span><span class="n">random_state</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
 
 <span class="c1"># TODO: Make an f1 scoring function using &#39;make_scorer&#39; </span>
 <span class="c1">#def ScoreFunc(y_true, y_predict):</span>
@@ -1064,6 +1068,7 @@ In terms of scoring for the algorithm performance, the higher the F1 score is (m
     <span class="n">grid_obj</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X_all</span><span class="p">,</span> <span class="n">y_all</span><span class="p">)</span>
     <span class="c1"># Get the estimator</span>
     <span class="n">clf</span> <span class="o">=</span> <span class="n">grid_obj</span><span class="o">.</span><span class="n">best_estimator_</span>
+    <span class="k">print</span> <span class="n">clf</span>
 <span class="k">except</span> <span class="ne">Exception</span><span class="p">,</span><span class="n">e</span><span class="p">:</span> 
         <span class="k">print</span> <span class="nb">str</span><span class="p">(</span><span class="n">e</span><span class="p">)</span>
 
@@ -1073,23 +1078,6 @@ In terms of scoring for the algorithm performance, the higher the F1 score is (m
 </pre></div>
 
 </div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area"><div class="prompt"></div>
-<div class="output_subarea output_stream output_stdout output_text">
-<pre>Made predictions in 0.0040 seconds.
-Tuned model has a training F1 score of 0.8726.
-Made predictions in 0.0020 seconds.
-Tuned model has a testing F1 score of 0.8188.
-</pre>
-</div>
-</div>
-
 </div>
 </div>
 
@@ -1110,8 +1098,7 @@ Tuned model has a testing F1 score of 0.8188.
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p><strong>Answer: </strong></p>
-<p>Tuned model has a training F1 score of 0.8726 and has a testing F1 score of 0.8188. comparing to the model without using gridsearch, there is a slight decrease for training dataset (0.8712), but better for test dataset (0.7632)</p>
-<p>it proves the parameter tuning is good for reaching a higher score</p>
+<p>Tuned model has a training F1 score of 0.9736 and has a testing F1 score of 0.9764. comparing to the model without using gridsearch, the score for both testing and training have significant improvement and it proves the parameter tuning is good for reaching a higher score</p>
 
 </div>
 </div>
@@ -1127,6 +1114,19 @@ Tuned model has a testing F1 score of 0.8188.
 
 </div>
 </div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython2"><pre><span></span> 
+</pre></div>
+
+</div>
+</div>
+</div>
+
 </div>
     </div>
   </div>
